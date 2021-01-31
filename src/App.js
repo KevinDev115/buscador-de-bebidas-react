@@ -5,20 +5,23 @@ import ListaBebidas from "./components/ListaBebidas";
 
 import CategoriasProvider from "./context/CategoriasContext";
 import BebidasProvider from "./context/BebidasContext";
+import ModalProvider from "./context/ModalContext";
 
 export default function App() {
   return (
     <CategoriasProvider>
       <BebidasProvider>
-        <Header />
+        <ModalProvider>
+          <Header />
 
-        <div className="container mt-5">
-          <div className="row">
-            <Formulario />
+          <div className="container mt-5">
+            <div className="row">
+              <Formulario />
+            </div>
+
+            <ListaBebidas />
           </div>
-
-          <ListaBebidas />
-        </div>
+        </ModalProvider>
       </BebidasProvider>
     </CategoriasProvider>
   );
